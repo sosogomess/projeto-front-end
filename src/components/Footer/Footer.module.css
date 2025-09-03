@@ -1,0 +1,25 @@
+/* Home.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer.module.css */
+.footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 1rem 0;
+}
