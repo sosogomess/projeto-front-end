@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import styles from './produtos.module.css';
+
 
 export default function ProdutosPage() {
   const [produtos, setProdutos] = useState([]);
