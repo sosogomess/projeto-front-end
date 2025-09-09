@@ -83,8 +83,6 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ---
 
-## 🔧 Scripts Disponíveis
-
 ```bash
 npm run dev      # Servidor de desenvolvimento
 ```
