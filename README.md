@@ -83,10 +83,6 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ---
 
-```bash
-npm run dev      # Servidor de desenvolvimento
-```
-
 ## 📝 Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte do curso de Desenvolvimento Front-end.
