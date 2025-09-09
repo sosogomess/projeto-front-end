@@ -1,11 +1,10 @@
-/* Page Styles */
+
 .container {
   min-height: 100vh;
   background: linear-gradient(135deg, #FCCAED 0%, #E9B8DA 50%, #D6A6C8 100%);
   font-family: 'Inter', sans-serif;
 }
 
-/* Header Styles */
 .header {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(15px);
@@ -85,7 +84,7 @@
   width: 100%;
 }
 
-/* Hero Section */
+
 .heroSection {
   background: linear-gradient(135deg, #FCCAED 0%, #E9B8DA 30%, #D6A6C8 60%, #C393B5 90%, #B081A2 100%);
   padding: 5rem 0;
@@ -121,7 +120,6 @@
   z-index: 10;
 }
 
-/* Novo layout flexível para foto e texto lado a lado */
 .heroContentFlex {
   display: flex;
   align-items: center;
@@ -145,7 +143,7 @@
   border: 4px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  border-radius: 12px; /* Bordas mais sutis para formato retangular */
+  border-radius: 12px; 
   object-fit: cover;
 }
 
@@ -227,7 +225,7 @@
   font-size: 0.875rem;
 }
 
-/* About Section */
+
 .aboutSection {
   background: #ffffff;
   padding: 4rem 0;
@@ -282,7 +280,6 @@
   margin: 0 auto;
 }
 
-/* Posts Section */
 .postsSection {
   background: linear-gradient(135deg, #FCCAED 0%, #E9B8DA 100%);
   padding: 4rem 0;
@@ -414,7 +411,7 @@
   width: 100%;
 }
 
-/* Footer Styles */
+
 .footer {
   background: linear-gradient(135deg, #B081A2 0%, #C393B5 100%);
   color: white;

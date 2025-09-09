@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "../components/Header/page";
-import Footer from "../components/Footer/page";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -11,7 +11,6 @@ const blogPosts = [
         id: 1,
         title: "Projeto do Carrinho",
         excerpt: "Participei do desenvolvimento de um carrinho funcional como parte de um desafio prático escolar.",
-        date: "2025-09-01",
         category: "Projeto Escolar",
         role: "Desenvolvedora"
     },
@@ -19,7 +18,6 @@ const blogPosts = [
         id: 2,
         title: "Portal de Matéria: Geografia",
         excerpt: "Fui Product Owner no desenvolvimento de um portal de matérias escolares, onde o tema Geografia foi definido para explorar conteúdos e recursos interativos.",
-        date: "2025-09-02",
         category: "Projeto Escolar",
         role: "Product Owner"
     },
@@ -27,9 +25,7 @@ const blogPosts = [
         id: 3,
         title: "Lumina: Blog de Beleza",
         excerpt: "Participei como desenvolvedora em equipe escolar no projeto Lumina, um blog de beleza criado para o foco em autocuidado.",
-        date: "2025-09-03",
-        readTime: "5 min",
-        category: "Web Design",
+        category: "Projeto escolar",
         role: "Desenvolvedora"
     }
 ];

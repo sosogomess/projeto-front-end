@@ -1,30 +1,226 @@
 .header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.headerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #69d2e7; /* pode trocar a cor */
-  color: #fff;
+  height: 100%;
 }
 
-.logo h1 {
-  margin: 0;
-}
-
-.nav ul {
-  list-style: none;
+.logo {
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  gap: 20px;
+  height: 90px;
 }
 
-.nav a {
-  color: #fff;
-  text-decoration: none;
+.logoImage {
+  border-radius: 8px;
+  object-fit: contain !important;
+  max-width: 150px !important;
+  max-height: 90px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.logoText h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  line-height: 1.2;
   font-weight: bold;
 }
 
-.cart {
-  font-size: 0.9rem;
+.logoText p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  background-color: #f5f5f5;
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* === RESPONSIVIDADE HEADER === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .header {
+    height: 80px;
+  }
+  
+  .logo {
+    gap: 15px;
+    height: 70px;
+  }
+  
+  .logoImage {
+    max-width: 120px !important;
+    max-height: 70px !important;
+  }
+  
+  .logoText h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logoText p {
+    font-size: 0.9rem;
+  }
+  
+  .nav {
+    gap: 15px;
+  }
+  
+  .navLink {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets pequenos */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  
+  .headerContainer {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    gap: 10px;
+    height: 60px;
+  }
+  
+  .logoImage {
+    max-width: 80px !important;
+    max-height: 50px !important;
+  }
+  
+  .logoText h1 {
+    font-size: 1.2rem;
+  }
+  
+  .logoText p {
+    font-size: 0.8rem;
+  }
+  
+  .nav {
+    gap: 10px;
+  }
+  
+  .navLink {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+  }
+  
+  .headerContainer {
+    padding: 0 10px;
+  }
+  
+  .headerContent {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .logo {
+    gap: 8px;
+    height: 30px;
+  }
+  
+  .logoImage {
+    max-width: 50px !important;
+    max-height: 30px !important;
+  }
+  
+  .logoText h1 {
+    font-size: 1rem;
+  }
+  
+  .logoText p {
+    font-size: 0.7rem;
+  }
+  
+  .nav {
+    gap: 5px;
+  }
+  
+  .navLink {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 320px) {
+  .header {
+    height: 50px;
+  }
+  
+  .logo {
+    height: 25px;
+    gap: 5px;
+  }
+  
+  .logoImage {
+    max-width: 40px !important;
+    max-height: 25px !important;
+  }
+  
+  .logoText h1 {
+    font-size: 0.9rem;
+  }
+  
+  .logoText p {
+    font-size: 0.6rem;
+  }
+  
+  .navLink {
+    padding: 3px 4px;
+    font-size: 0.6rem;
+  }
 }
