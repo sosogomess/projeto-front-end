@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Front-end - Personagens 2D
 
-## Getting Started
+> **Aplicação web moderna para explorar personagens de desenhos animados clássicos**
 
-First, run the development server:
+Este projeto foi desenvolvido como parte do curso de **Desenvolvimento Front-end** do **SESI & SENAI Valinhos - 2TDS**, utilizando **Next.js 15** e consumindo APIs externas para demonstrar conceitos fundamentais de desenvolvimento web moderno.
+
+## ✨ Funcionalidades
+
+- **Listagem de Personagens**: Visualize uma coleção completa de personagens 2D
+- **Detalhes Completos**: Explore informações detalhadas de cada personagem
+- **Performance Otimizada**: Carregamento rápido com Next.js
+- **UX Intuitiva**: Navegação fluida e feedback visual ao usuário
+- **Notificações**: Sistema de alertas com React Toastify
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Next.js 15** - Framework React de produção
+- **Axios** - Cliente HTTP para requisições à API
+- **CSS Modules** - Estilização componetizada
+- **React Toastify** - Sistema de notificações
+- **ESLint** - Linting e qualidade de código
+
+## 🌐 API Utilizada
+
+**Cartoons 2D API**: `https://api.sampleapis.com/cartoons/cartoons2D`
+
+Fornece dados sobre personagens clássicos de desenhos animados, incluindo:
+- Nome e ano de criação
+- Criador/estúdio
+- Gêneros e classificação
+- Imagens e informações adicionais
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+- Node.js instalado
+- npm 
+
+### Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/sosogomess/projeto-front-end.git
+
+# Entre no diretório
+cd projeto-front-end
+
+# Instale as dependências
+npm install
+
+# Execute o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Acessar a aplicação
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🎯 Funcionalidades Implementadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📊 Página de Listagem (`/personagens`)
+- Fetch de dados da API externa
+- Renderização em grid responsivo
+- Cards informativos com preview
+- Links para página de detalhes
+- Estados de loading e erro
 
-## Learn More
+### 🔍 Página de Detalhes (`/personagens/[id]`)
+- Fetch específico por ID
+- Layout detalhado com informações completas
+- Breadcrumb de navegação
+- Botões de retorno e navegação
+- Tratamento de erros com Toastify
+- Design responsivo premium
 
-To learn more about Next.js, take a look at the following resources:
+### 🧭 Componentes Reutilizáveis
+- **Header**: Navegação principal com logo
+- **Footer**: Informações do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Desenvolvido por
 
-## Deploy on Vercel
+**Sophia Gomes SESI & SENAI Valinhos - Turma 2TDS**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Scripts Disponíveis
+
+```bash
+npm run dev      # Servidor de desenvolvimento
+```
+
+## 📝 Licença
+
+Este projeto foi desenvolvido para fins educacionais como parte do curso de Desenvolvimento Front-end.
+
+---
+
+⭐ **Se este projeto foi útil para você, considere dar uma estrela no repositório!**
