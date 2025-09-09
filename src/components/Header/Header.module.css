@@ -1,9 +1,11 @@
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(195, 147, 181, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 15px rgba(195, 147, 181, 0.1);
   height: 100px;
   display: flex;
   align-items: center;
@@ -13,7 +15,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
   height: 100%;
 }
 
@@ -22,13 +24,19 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding: 1.5rem 0;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
   height: 90px;
+}
+
+.logoIcon {
+  font-size: 2rem;
+  color: #C393B5;
 }
 
 .logoImage {
@@ -42,39 +50,53 @@
 
 .logoText h1 {
   margin: 0;
-  font-size: 1.8rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #1f2937;
   line-height: 1.2;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .logoText p {
   margin: 0;
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.875rem;
+  color: #6b7280;
   line-height: 1.2;
 }
 
 .nav {
   display: flex;
-  gap: 25px;
+  gap: 2rem;
   align-items: center;
 }
 
 .navLink {
-  text-decoration: none;
-  color: #333;
+  color: #374151;
   font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
   padding: 10px 18px;
   border-radius: 4px;
-  transition: all 0.3s ease;
   font-size: 1rem;
 }
 
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #C393B5;
+  transition: width 0.3s ease;
+}
+
 .navLink:hover {
-  background-color: #f5f5f5;
-  color: #ff6dc7;
-  transform: translateY(-2px);
+  color: #C393B5;
+}
+
+.navLink:hover::before {
+  width: 100%;
 }
 
 /* === RESPONSIVIDADE HEADER === */
@@ -115,6 +137,10 @@
 
 /* Tablets pequenos */
 @media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
   .header {
     height: 70px;
   }
@@ -138,15 +164,6 @@
   }
   
   .logoText p {
-    font-size: 0.8rem;
-  }
-  
-  .nav {
-    gap: 10px;
-  }
-  
-  .navLink {
-    padding: 6px 8px;
     font-size: 0.8rem;
   }
 }
