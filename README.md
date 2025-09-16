@@ -4,7 +4,7 @@
 
 Este projeto foi desenvolvido como parte do curso de **Desenvolvimento Front-end** do **SESI & SENAI Valinhos - 2TDS**, utilizando **Next.js 15** e consumindo APIs externas para demonstrar conceitos fundamentais de desenvolvimento web moderno.
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - **Listagem de Personagens**: Visualize uma coleção completa de personagens 2D
 - **Detalhes Completos**: Explore informações detalhadas de cada personagem
@@ -12,7 +12,7 @@ Este projeto foi desenvolvido como parte do curso de **Desenvolvimento Front-end
 - **UX Intuitiva**: Navegação fluida e feedback visual ao usuário
 - **Notificações**: Sistema de alertas com React Toastify
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Next.js 15** - Framework React de produção
 - **Axios** - Cliente HTTP para requisições à API
@@ -30,7 +30,7 @@ Fornece dados sobre personagens clássicos de desenhos animados, incluindo:
 - Gêneros e classificação
 - Imagens e informações adicionais
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Node.js instalado
@@ -55,16 +55,16 @@ npm run dev
 ### Acessar a aplicação
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## 🎯 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
-### 📊 Página de Listagem (`/personagens`)
+### Página de Listagem (`/personagens`)
 - Fetch de dados da API externa
 - Renderização em grid responsivo
 - Cards informativos com preview
 - Links para página de detalhes
 - Estados de loading e erro
 
-### 🔍 Página de Detalhes (`/personagens/[id]`)
+### Página de Detalhes (`/personagens/[id]`)
 - Fetch específico por ID
 - Layout detalhado com informações completas
 - Breadcrumb de navegação
@@ -72,18 +72,18 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 - Tratamento de erros com Toastify
 - Design responsivo premium
 
-### 🧭 Componentes Reutilizáveis
+### Componentes Reutilizáveis
 - **Header**: Navegação principal com logo
 - **Footer**: Informações do projeto
 
 
-## 👨‍💻 Desenvolvido por
+## Desenvolvido por
 
 **Sophia Gomes SESI & SENAI Valinhos - Turma 2TDS**
 
 ---
 
-## 📝 Licença
+## Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte do curso de Desenvolvimento Front-end.
 
