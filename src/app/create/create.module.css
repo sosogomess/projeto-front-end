@@ -1,0 +1,68 @@
+.formBox {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(255,64,129,0.10);
+  padding: 32px 24px;
+  max-width: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formTitle {
+  font-size: 2rem;
+  color: #C393B5;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #C393B5;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  background: #ffe4ec;
+  color: #C393B5;
+  transition: border 0.2s;
+}
+.input:focus {
+  border: 2px solid #C393B5;
+  outline: none;
+}
+.criarBtn {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,64,129,0.10);
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 12px;
+}
+.criarBtn:hover {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  transform: scale(1.05);
+}
+.criarBtn {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,64,129,0.10);
+  transition: background 0.2s, transform 0.2s;
+  margin: 16px 0;
+}
+
+.criarBtn:hover {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  transform: scale(1.05);
+}
