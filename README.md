@@ -85,7 +85,7 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ## Licença
 
-Este projeto foi desenvolvido para fins educacionais como parte do curso de Desenvolvimento Front-end.
+Este projeto foi desenvolvido para fins educacionais como parte do curso de Desenvolvimento de Sistemas.
 
 ---
 
