@@ -1,11 +1,10 @@
 .container {
-  max-width: 1200px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 12px;
   min-height: 100vh;
 }
 
-/* Breadcrumb */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -15,13 +14,13 @@
 }
 
 .breadcrumbLink {
-  color: #2196f3;
+  color: #c393b5;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .breadcrumbLink:hover {
-  color: #1976d2;
+  color: #c393b5;
   text-decoration: underline;
 }
 
@@ -35,7 +34,6 @@
   font-weight: 500;
 }
 
-/* Botões de navegação */
 .navigationButtons {
   display: flex;
   gap: 12px;
@@ -68,16 +66,14 @@
 }
 
 .homeButtonNav {
-  background-color: #2196f3;
+  background-color: #C393B5 ;
   color: white;
 }
 
 .homeButtonNav:hover {
-  background-color: #1976d2;
+  background-color: #C393B5 ;
   text-decoration: none;
 }
-
-/* Estados de loading, error e not found */
 .loading,
 .error,
 .notFound {
@@ -91,15 +87,19 @@
   width: 50px;
   height: 50px;
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #2196f3;
+  border-top: 4px solid #C393B5;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 20px;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading h2,
@@ -145,12 +145,12 @@
 }
 
 .retryButton {
-  background-color: #4caf50;
+  background-color: #c193c3 ;
   color: white;
 }
 
 .retryButton:hover {
-  background-color: #45a049;
+  background-color: #c193c3;
 }
 
 .backButton {
@@ -167,17 +167,19 @@
 /* Card de detalhes */
 .detailCard {
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   border: 1px solid #e1e8ed;
+  max-width: 600px;
+  margin: 0 auto 16px auto;
 }
 
 .imageSection {
-  height: 400px;
+  height: 250px;
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #c193c3 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +188,7 @@
 .mainImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -198,57 +200,57 @@
 }
 
 .imagePlaceholder span {
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 
 .imagePlaceholder p {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   margin: 0;
 }
 
 .contentSection {
-  padding: 32px;
+  padding: 12px;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #333;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .yearBadge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #c193c3 0%, #764ba2 100%);
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 4px 8px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 .detailItem {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .detailItem:last-child {
@@ -256,16 +258,16 @@
 }
 
 .detailLabel {
-  min-width: 160px;
+  min-width: 100px;
   color: #555;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 .detailValue {
   color: #333;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
 .genres {
@@ -276,40 +278,39 @@
 
 .genreTag {
   background-color: #e3f2fd;
-  color: #1976d2;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 0.85rem;
+  color: rgb(197, 118, 221);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
-/* Informações adicionais */
 .additionalInfo {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 2px solid #f0f0f0;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .additionalInfo h3 {
   color: #333;
-  font-size: 1.3rem;
-  margin-bottom: 16px;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .infoGrid {
   display: grid;
-  gap: 8px;
+  gap: 4px;
 }
 
 .infoItem {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 12px;
-  padding: 8px 0;
-  font-size: 0.9rem;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.8rem;
 }
 
 .infoKey {
@@ -321,7 +322,6 @@
   color: #333;
 }
 
-/* Botões de ação finais */
 .actionButtons {
   display: flex;
   gap: 16px;
@@ -346,23 +346,23 @@
 }
 
 .listButton {
-  background-color: #2196f3;
+  background-color: #c193c3;
   color: white;
 }
 
 .listButton:hover {
-  background-color: #1976d2;
+  background-color: #a76b8a;
   text-decoration: none;
   transform: translateY(-2px);
 }
 
 .homeButtonFinal {
-  background-color: #4caf50;
+  background-color: #c193c3;
   color: white;
 }
 
 .homeButtonFinal:hover {
-  background-color: #45a049;
+  background-color: #a76b8a;
   text-decoration: none;
   transform: translateY(-2px);
 }
@@ -383,11 +383,11 @@
   }
 
   .imageSection {
-    height: 250px;
+    height: 180px;
   }
 
   .contentSection {
-    padding: 20px;
+    padding: 8px;
   }
 
   .header {
@@ -396,7 +396,7 @@
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
   }
 
   .detailItem {
@@ -425,18 +425,26 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .imageSection {
-    height: 200px;
+    height: 150px;
   }
 
   .imagePlaceholder span {
-    font-size: 3rem;
+    font-size: 1.2rem;
   }
 
   .contentSection {
-    padding: 16px;
+    padding: 6px;
+  }
+
+  .container {
+    padding: 6px;
+  }
+
+  .detailCard {
+    max-width: 100%;
   }
 }

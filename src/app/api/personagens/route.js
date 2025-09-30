@@ -1,4 +1,3 @@
-// Simulação de CRUD local para personagens
 let personagens = [];
 
 export async function GET() {

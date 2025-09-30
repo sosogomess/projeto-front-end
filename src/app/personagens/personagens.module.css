@@ -40,7 +40,7 @@
 }
 
 .retryButton {
-  background-color: #3498db;
+  background-color: #c193c3;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -51,7 +51,7 @@
 }
 
 .retryButton:hover {
-  background-color: #2980b9;
+  background-color: #c193c3;
 }
 
 .grid {
@@ -148,7 +148,7 @@
 
 .detailsButton {
   display: inline-block;
-  background-color: #2196f3;
+  background-color: #c193c3;
   color: white;
   text-decoration: none;
   padding: 10px 20px;
@@ -160,7 +160,7 @@
 }
 
 .detailsButton:hover {
-  background-color: #1976d2;
+  background-color: #a76b8a;
   text-decoration: none;
 }
 

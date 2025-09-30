@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import axios from 'axios'
@@ -15,6 +15,7 @@ export default function DetalhesPersonagemPage() {
   const [personagem, setPersonagem] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const hasShownToast = useRef(false)
 
   useEffect(() => {
     if (params.id) {
@@ -27,21 +28,20 @@ export default function DetalhesPersonagemPage() {
       setLoading(true)
       setError(null)
       
-      // Buscar todos os personagens e filtrar pelo ID
       const response = await axios.get('https://api.sampleapis.com/cartoons/cartoons2D')
       const personagemEncontrado = response.data.find(p => p.id === parseInt(id))
       
       if (personagemEncontrado) {
         setPersonagem(personagemEncontrado)
-        toast.success('Personagem carregado com sucesso!')
+        if (!hasShownToast.current) {
+          toast.success('Personagem carregado com sucesso!')
+          hasShownToast.current = true
+        }
       } else {
         setError('Personagem não encontrado')
-        toast.error('Personagem não encontrado!')
       }
     } catch (err) {
-      const errorMessage = 'Erro ao carregar detalhes do personagem'
-      setError(errorMessage)
-      toast.error(errorMessage)
+      setError('Erro ao carregar detalhes do personagem')
       console.error('Erro:', err)
     } finally {
       setLoading(false)
@@ -80,12 +80,12 @@ export default function DetalhesPersonagemPage() {
         <Header />
         <div className={styles.container}>
           <div className={styles.error}>
-            <div className={styles.errorIcon}>⚠️</div>
+            <div className={styles.errorIcon}>!</div>
             <h2>Ops! Algo deu errado</h2>
             <p>{error}</p>
             <div className={styles.errorActions}>
               <button onClick={handleRetry} className={styles.retryButton}>
-                🔄 Tentar Novamente
+                Tentar Novamente
               </button>
               <Link href="/personagens" className={styles.backButton}>
                 ← Voltar à Listagem
@@ -104,7 +104,7 @@ export default function DetalhesPersonagemPage() {
         <Header />
         <div className={styles.container}>
           <div className={styles.notFound}>
-            <div className={styles.notFoundIcon}>🔍</div>
+            <div className={styles.notFoundIcon}>?</div>
             <h2>Personagem não encontrado</h2>
             <p>O personagem que você está procurando não existe ou foi removido.</p>
             <div className={styles.notFoundActions}>
@@ -112,7 +112,7 @@ export default function DetalhesPersonagemPage() {
                 ← Voltar à Listagem
               </Link>
               <Link href="/" className={styles.homeButton}>
-                🏠 Ir para Home
+                Ir para Home
               </Link>
             </div>
           </div>
@@ -126,7 +126,6 @@ export default function DetalhesPersonagemPage() {
     <>
       <Header />
       <div className={styles.container}>
-        {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
           <Link href="/" className={styles.breadcrumbLink}>Home</Link>
           <span className={styles.breadcrumbSeparator}>›</span>
@@ -135,17 +134,6 @@ export default function DetalhesPersonagemPage() {
           <span className={styles.breadcrumbCurrent}>{personagem.title}</span>
         </div>
 
-        {/* Botões de navegação */}
-        <div className={styles.navigationButtons}>
-          <button onClick={handleVoltar} className={styles.backButtonNav}>
-            ← Voltar
-          </button>
-          <Link href="/" className={styles.homeButtonNav}>
-            🏠 Home
-          </Link>
-        </div>
-
-        {/* Card de detalhes */}
         <div className={styles.detailCard}>
           <div className={styles.imageSection}>
             {personagem.image ? (
@@ -163,7 +151,6 @@ export default function DetalhesPersonagemPage() {
               className={styles.imagePlaceholder} 
               style={{ display: personagem.image ? 'none' : 'flex' }}
             >
-              <span>📺</span>
               <p>Imagem não disponível</p>
             </div>
           </div>
@@ -179,21 +166,21 @@ export default function DetalhesPersonagemPage() {
             <div className={styles.details}>
               {personagem.creator && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>👨‍🎨 Criador:</strong>
+                  <strong className={styles.detailLabel}>Criador:</strong>
                   <span className={styles.detailValue}>{personagem.creator}</span>
                 </div>
               )}
 
               {personagem.year && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>📅 Ano de Lançamento:</strong>
+                  <strong className={styles.detailLabel}>Ano de Lançamento:</strong>
                   <span className={styles.detailValue}>{personagem.year}</span>
                 </div>
               )}
 
               {personagem.genre && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>🎭 Gêneros:</strong>
+                  <strong className={styles.detailLabel}>Gêneros:</strong>
                   <div className={styles.genres}>
                     {Array.isArray(personagem.genre) ? (
                       personagem.genre.map((g, index) => (
@@ -208,34 +195,34 @@ export default function DetalhesPersonagemPage() {
 
               {personagem.rating && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>⭐ Classificação:</strong>
+                  <strong className={styles.detailLabel}>Classificação:</strong>
                   <span className={styles.detailValue}>{personagem.rating}</span>
                 </div>
               )}
 
               {personagem.episodes && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>📺 Episódios:</strong>
+                  <strong className={styles.detailLabel}>Episódios:</strong>
                   <span className={styles.detailValue}>{personagem.episodes}</span>
                 </div>
               )}
 
               {personagem.runtime_in_minutes && (
                 <div className={styles.detailItem}>
-                  <strong className={styles.detailLabel}>⏱️ Duração:</strong>
+                  <strong className={styles.detailLabel}>Duração:</strong>
                   <span className={styles.detailValue}>{personagem.runtime_in_minutes} minutos</span>
                 </div>
               )}
 
               <div className={styles.detailItem}>
-                <strong className={styles.detailLabel}>🆔 ID:</strong>
+                <strong className={styles.detailLabel}>ID:</strong>
                 <span className={styles.detailValue}>#{personagem.id}</span>
               </div>
             </div>
 
-            {/* Informações adicionais */}
+           
             <div className={styles.additionalInfo}>
-              <h3>📋 Informações Completas</h3>
+              <h3>Informações Completas</h3>
               <div className={styles.infoGrid}>
                 {Object.entries(personagem).map(([key, value]) => {
                   if (key === 'image' || key === 'id' || !value) return null
@@ -258,13 +245,12 @@ export default function DetalhesPersonagemPage() {
           </div>
         </div>
 
-        {/* Botões de ação finais */}
         <div className={styles.actionButtons}>
           <Link href="/personagens" className={styles.listButton}>
-            📋 Ver Todos os Personagens
+            Ver Todos os Personagens
           </Link>
           <Link href="/" className={styles.homeButtonFinal}>
-            🏠 Voltar à Home
+            Voltar à Home
           </Link>
         </div>
       </div>
