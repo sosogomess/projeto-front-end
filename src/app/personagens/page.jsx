@@ -115,7 +115,7 @@ export default function PersonagensPage() {
               
               <div className={styles.actions}>
                 <Link 
-                  href={`/personagens/${personagem.id}`}
+                  href={`/get/${personagem.id}`}
                   className={styles.detailsButton}
                 >
                   Ver Detalhes
