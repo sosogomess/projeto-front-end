@@ -1,0 +1,132 @@
+.formBox {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(255,64,129,0.10);
+  padding: 32px 24px;
+  max-width: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formTitle {
+  font-size: 2rem;
+  color: #C393B5;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #C393B5;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  background: #ffe4ec;
+  color: #C393B5;
+  transition: border 0.2s;
+}
+
+.input:focus {
+  border: 2px solid #C393B5;
+  outline: none;
+}
+
+.criarBtn {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(195, 147, 181, 0.3);
+  transition: all 0.3s ease;
+  margin: 12px auto 0 auto;
+  display: block;
+  width: fit-content;
+}
+
+.criarBtn:hover {
+  background: linear-gradient(90deg, #ac739c 0%, #C393B5 100%);
+  transform: scale(1.05);
+}
+
+.criarBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.listContainer {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.listContainer h2 {
+  color: #C393B5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.listaPersonagens {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(255,64,129,0.10);
+  padding: 20px;
+}
+
+.personagemItem {
+  margin-bottom: 20px;
+}
+
+.personagemItem p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.personagemItem strong {
+  color: #C393B5;
+}
+
+.getButtonContainer {
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.getButton {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(195, 147, 181, 0.3);
+  transition: all 0.3s ease;
+}
+
+.getButton:hover {
+  background: linear-gradient(90deg, #ac739c 0%, #C393B5 100%);
+  transform: scale(1.05);
+  text-decoration: none;
+  color: white;
+}

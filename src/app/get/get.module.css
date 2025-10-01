@@ -1,0 +1,280 @@
+/* filepath: get.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.clearButton,
+.reloadButton,
+.retryButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.clearButton:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.reloadButton,
+.retryButton {
+  background-color: #C393B5;
+  color: white;
+}
+
+.reloadButton:hover,
+.retryButton:hover {
+  background-color: #a76b8a;
+  transform: translateY(-2px);
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.countTitle {
+  color: #333;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #C393B5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  color: #dc3545;
+}
+
+.error p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.empty p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.commentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.commentCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e8ed;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.commentCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #C393B5;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.commentId {
+  background: linear-gradient(135deg, #C393B5 0%, #B081A2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.postId {
+  background-color: #f8f9fa;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.commentName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.commentEmail {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.commentEmail strong {
+  color: #333;
+}
+
+.commentBody {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.cardActions {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  text-align: right;
+}
+
+.viewDetails {
+  color: #C393B5;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.commentCard:hover .viewDetails {
+  color: #a76b8a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .commentsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .commentCard {
+    padding: 16px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .clearButton,
+  .reloadButton {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.7rem;
+  }
+  
+  .commentCard {
+    padding: 14px;
+  }
+  
+  .commentName {
+    font-size: 1.1rem;
+  }
+  
+  .commentHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}

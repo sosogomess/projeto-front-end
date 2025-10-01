@@ -1,0 +1,398 @@
+/* filepath: detalhes-comment.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumbLink {
+  color: #C393B5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #a76b8a;
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  margin: 0 10px;
+  color: #999;
+}
+
+.breadcrumbCurrent {
+  color: #333;
+  font-weight: 500;
+}
+
+.loading,
+.error,
+.notFound {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #C393B5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading h2,
+.error h2,
+.notFound h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.loading p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+.errorIcon,
+.notFoundIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #a46a94;
+}
+
+.notFoundIcon {
+  color: #6c757d;
+}
+
+.errorActions,
+.notFoundActions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.retryButton,
+.backButton,
+.homeButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retryButton {
+  background-color: #C393B5;
+  color: white;
+}
+
+.retryButton:hover {
+  background-color: #a76b8a;
+}
+
+.backButton,
+.homeButton {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.backButton:hover,
+.homeButton:hover {
+  background-color: #e0e0e0;
+  text-decoration: none;
+}
+
+.detailCard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: 1px solid #e1e8ed;
+}
+
+.header {
+  background: linear-gradient(135deg, #C393B5 0%, #B081A2 100%);
+  color: white;
+  padding: 30px;
+}
+
+.headerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.postBadge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contentSection {
+  padding: 30px;
+}
+
+.commentName {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.commentName h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #C393B5;
+}
+
+.detailLabel {
+  min-width: 140px;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.detailValue {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.commentBody {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.commentBody h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.commentBody p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.imageSection {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+.personagemImage {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.genreTag {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.listButton,
+.homeButtonFinal {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.listButton {
+  background-color: #C393B5;
+  color: white;
+}
+
+.listButton:hover {
+  background-color: #a76b8a;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.homeButtonFinal {
+  background-color: #6c757d;
+  color: white;
+}
+
+.homeButtonFinal:hover {
+  background-color: #5a6268;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .headerInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .contentSection {
+    padding: 20px;
+  }
+
+  .detailItem {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detailLabel {
+    min-width: auto;
+    font-weight: 700;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listButton,
+  .homeButtonFinal {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .commentName h2 {
+    font-size: 1.3rem;
+  }
+
+  .commentBody {
+    padding: 20px;
+  }
+
+  .detailCard {
+    border-radius: 12px;
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .contentSection {
+    padding: 15px;
+  }
+}
