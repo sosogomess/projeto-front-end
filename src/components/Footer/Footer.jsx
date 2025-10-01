@@ -18,8 +18,7 @@ return (
                     <ul className={styles.footerLinks}>
                         <li><a href="/">Home</a></li>
                         <li><a href="/personagens">Personagens</a></li>
-                        <li><a href="/get">GET - Listar</a></li>
-                        <li><a href="/post">POST - Criar</a></li>
+                        <li><a href="/post">Criar Personagens</a></li>
                         <li><a href="/apiinfo">API Info</a></li>
                     </ul>
                 </div>

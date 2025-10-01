@@ -110,7 +110,7 @@ export default function Post() {
             <Header />
             <div className={styles.formBox}>
                 <form onSubmit={criarPersonagem} style={{width: '100%'}}>
-                    <div className={styles.formTitle}>Criar Personagem (POST)</div>
+                    <div className={styles.formTitle}>Criar Personagem</div>
                     <input
                         type="text"
                         name="nome"
