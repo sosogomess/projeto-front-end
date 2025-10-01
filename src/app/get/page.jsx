@@ -19,22 +19,18 @@ export default function Get() {
         setLoading(true);
         setError(false);
         try {
-            // Verificar se sessionStorage está disponível
             if (typeof window !== 'undefined' && window.sessionStorage) {
                 const sessionStorageData = sessionStorage.getItem(STORAGE_KEY);
 
-                // Se existir, usa o que está salvo. Se não, faz a requisição e salva no sessionStorage
                 if (sessionStorageData) {
                     const data = JSON.parse(sessionStorageData);
                     setPersonagens(data);
                 } else {
-                    // Se não tiver nada salvo, faz a requisição
                     const response = await axios.get("https://api.sampleapis.com/cartoons/cartoons2D");
                     setPersonagens(response.data);
                     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(response.data));
                 }
             } else {
-                // Fallback se sessionStorage não estiver disponível
                 const response = await axios.get("https://api.sampleapis.com/cartoons/cartoons2D");
                 setPersonagens(response.data);
             }
@@ -46,7 +42,6 @@ export default function Get() {
         }
     };
 
-    // Ir para página de detalhes
     const navegarParaPersonagem = (personagemId) => {
         try {
             if (personagemId) {
@@ -57,7 +52,6 @@ export default function Get() {
         }
     };
 
-    // Buscar personagem por ID específico
     const buscarPorId = () => {
         if (!idBusca.trim()) {
             alert("Digite um ID para buscar!");
@@ -66,7 +60,6 @@ export default function Get() {
         navegarParaPersonagem(idBusca.trim());
     };
 
-    // Limpar sessionStorage, caso que queira forçar uma nova requisição
     const limparSessionStorage = () => {
         try {
             if (typeof window !== 'undefined' && window.sessionStorage) {
@@ -79,9 +72,7 @@ export default function Get() {
         }
     };
 
-    // Busca automática quando a página carrega
     useEffect(() => {
-        // Aguardar o componente estar totalmente montado
         const timer = setTimeout(() => {
             buscarPersonagens();
         }, 100);
@@ -94,11 +85,10 @@ export default function Get() {
             <Header />
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <h1 className={styles.title}>Lista de Personagens (GET)</h1>
+                    <h1 className={styles.title}>Lista de Personagens</h1>
                     <p className={styles.subtitle}>Explore nossa coleção de personagens 2D</p>
                 </div>
 
-                {/* Campo de busca por ID */}
                 <div className={styles.searchSection}>
                     <h3 className={styles.searchTitle}>Buscar por ID</h3>
                     <div className={styles.searchContainer}>
@@ -126,7 +116,7 @@ export default function Get() {
 
                 <div className={styles.controls}>
                     <button onClick={limparSessionStorage} className={styles.clearButton}>
-                        Limpar SessionStorage
+                        Limpar
                     </button>
                     <button onClick={buscarPersonagens} className={styles.reloadButton}>
                         Recarregar Lista

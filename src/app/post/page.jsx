@@ -22,7 +22,6 @@ export default function Post() {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        // Aguardar o componente estar totalmente montado
         const timer = setTimeout(() => {
             if (typeof window !== 'undefined' && window.sessionStorage) {
                 const sessionStorageData = sessionStorage.getItem(STORAGE_KEY);
@@ -39,7 +38,6 @@ export default function Post() {
         return () => clearTimeout(timer);
     }, []);
 
-    // Função para criar um novo personagem via POST
     const criarPersonagem = async (e) => {
         e.preventDefault();
         if (!form.nome.trim() || !form.descricao.trim() || !form.imagem.trim()) {
@@ -51,7 +49,6 @@ export default function Post() {
         setError(false);
 
         try {
-            // Cria um novo personagem local
             const novoPersonagem = {
                 id: Date.now(),
                 nome: form.nome.trim(),
@@ -60,10 +57,8 @@ export default function Post() {
                 created_at: new Date().toISOString()
             };
 
-            // Simula POST delay
             await new Promise(resolve => setTimeout(resolve, 1000));
 
-            // Atualiza sessionStorage
             if (typeof window !== 'undefined' && window.sessionStorage) {
                 const sessionStorageData = sessionStorage.getItem(STORAGE_KEY);
                 const personagensAtuais = sessionStorageData ? JSON.parse(sessionStorageData) : [];
@@ -73,7 +68,6 @@ export default function Post() {
                 setAddedPersonagens(personagensAtualizados);
             }
             
-            // Limpa o formulário
             setForm({ nome: "", descricao: "", imagem: "" });
             toast.success("Personagem criado com sucesso!");
         } catch (error) {

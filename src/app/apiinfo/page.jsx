@@ -36,7 +36,6 @@ export default function ApiInfo() {
                 />
             </div>
 
-            {/* Personagens decorativos - lado direito */}
             <div className={styles.rightCharacters}>
                 <img 
                     src="https://preview.redd.it/favorite-red-characters-v0-11lc9jj7ksnd1.png?width=640&crop=smart&auto=webp&s=873232796508961b041a371a0317380f147cc06b" 

@@ -17,7 +17,6 @@ export default function DetalhesPersonagemPage() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        // Aguardar o componente estar totalmente montado
         const timer = setTimeout(() => {
             setMounted(true);
             if (params.id) {
@@ -33,10 +32,8 @@ export default function DetalhesPersonagemPage() {
             setLoading(true);
             setError(null);
             
-            // Aguardar um pouco para evitar problemas de hidratação
             await new Promise(resolve => setTimeout(resolve, 150));
             
-            // Primeiro tenta buscar no sessionStorage
             if (typeof window !== 'undefined' && window.sessionStorage) {
                 try {
                     const sessionStorageData = sessionStorage.getItem("personagens_salvo_na_sessionStorage");
@@ -46,7 +43,6 @@ export default function DetalhesPersonagemPage() {
                         
                         if (personagemEncontrado) {
                             setPersonagem(personagemEncontrado);
-                            // Usar timeout para toast também
                             setTimeout(() => {
                                 toast.success("Personagem carregado do cache!");
                             }, 200);
@@ -59,24 +55,20 @@ export default function DetalhesPersonagemPage() {
                 }
             }
             
-            // Se não encontrou no sessionStorage, busca da API
             const response = await axios.get("https://api.sampleapis.com/cartoons/cartoons2D");
             const personagemEncontrado = response.data.find(p => p.id === parseInt(id));
             
             if (personagemEncontrado) {
                 setPersonagem(personagemEncontrado);
-                // Usar timeout para toast também
                 setTimeout(() => {
                     toast.success("Personagem carregado com sucesso!");
                 }, 200);
 
-                // Salva no sessionStorage para futuras consultas
                 if (typeof window !== 'undefined' && window.sessionStorage) {
                     try {
                         const sessionStorageData = sessionStorage.getItem("personagens_salvo_na_sessionStorage");
                         const personagensAtuais = sessionStorageData ? JSON.parse(sessionStorageData) : [];
                         
-                        // Evita duplicatas
                         const jaExiste = personagensAtuais.find(p => p.id === personagemEncontrado.id);
                         if (!jaExiste) {
                             const personagensAtualizados = [...personagensAtuais, personagemEncontrado];
@@ -109,7 +101,6 @@ export default function DetalhesPersonagemPage() {
         }
     };
 
-    // Evitar renderização antes da montagem para prevenir erros de hidratação
     if (!mounted) {
         return (
             <>
