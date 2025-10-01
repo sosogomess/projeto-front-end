@@ -16,9 +16,10 @@ return (
                 <div className={styles.footerSection}>
                     <h3>Links Rápidos</h3>
                     <ul className={styles.footerLinks}>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#posts">Posts</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/personagens">Personagens</a></li>
+                        <li><a href="/post">Criar Personagens</a></li>
+                        <li><a href="/apiinfo">API Info</a></li>
                     </ul>
                 </div>
                 <div className={styles.footerSection}>
