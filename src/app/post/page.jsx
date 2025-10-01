@@ -84,6 +84,27 @@ export default function Post() {
         setForm({ ...form, [name]: value });
     };
 
+    const deletarPersonagem = (personagemId) => {
+        if (window.confirm("Tem certeza que deseja deletar este personagem?")) {
+            try {
+                if (typeof window !== 'undefined' && window.sessionStorage) {
+                    const sessionStorageData = sessionStorage.getItem(STORAGE_KEY);
+                    if (sessionStorageData) {
+                        const personagensAtuais = JSON.parse(sessionStorageData);
+                        const personagensAtualizados = personagensAtuais.filter(p => p.id !== personagemId);
+                        
+                        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(personagensAtualizados));
+                        setAddedPersonagens(personagensAtualizados);
+                        toast.success("Personagem deletado com sucesso!");
+                    }
+                }
+            } catch (error) {
+                console.error("Erro ao deletar personagem:", error);
+                toast.error("Erro ao deletar personagem!");
+            }
+        }
+    };
+
     return (
         <div className={styles.container}>
             <Header />
@@ -147,6 +168,15 @@ export default function Post() {
                                 {personagem.created_at && (
                                     <p><strong>Criado em:</strong> {new Date(personagem.created_at).toLocaleString('pt-BR')}</p>
                                 )}
+                                <div className={styles.personagemActions}>
+                                    <button 
+                                        onClick={() => deletarPersonagem(personagem.id)}
+                                        className={styles.deleteButton}
+                                        title="Deletar personagem"
+                                    >
+                                        Deletar
+                                    </button>
+                                </div>
                             </div>
                         ))}
                     </div>

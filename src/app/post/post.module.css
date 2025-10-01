@@ -130,3 +130,32 @@
   text-decoration: none;
   color: white;
 }
+
+.personagemActions {
+  margin-top: 12px;
+  text-align: right;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.deleteButton {
+  background: linear-gradient(90deg, #C393B5 0%, #ac739c 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(195, 147, 181, 0.3);
+}
+
+.deleteButton:hover {
+  background: linear-gradient(90deg, #ac739c 0%, #C393B5 100%);
+  transform: scale(1.05);
+}
+
+.deleteButton:active {
+  transform: translateY(1px);
+}
