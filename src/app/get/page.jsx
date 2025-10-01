@@ -12,6 +12,7 @@ export default function Get() {
     const [loading, setLoading] = useState(false);
     const [personagens, setPersonagens] = useState([]);
     const [error, setError] = useState(false);
+    const [idBusca, setIdBusca] = useState("");
     const router = useRouter();
 
     const buscarPersonagens = async () => {
@@ -56,6 +57,15 @@ export default function Get() {
         }
     };
 
+    // Buscar personagem por ID específico
+    const buscarPorId = () => {
+        if (!idBusca.trim()) {
+            alert("Digite um ID para buscar!");
+            return;
+        }
+        navegarParaPersonagem(idBusca.trim());
+    };
+
     // Limpar sessionStorage, caso que queira forçar uma nova requisição
     const limparSessionStorage = () => {
         try {
@@ -88,12 +98,38 @@ export default function Get() {
                     <p className={styles.subtitle}>Explore nossa coleção de personagens 2D</p>
                 </div>
 
+                {/* Campo de busca por ID */}
+                <div className={styles.searchSection}>
+                    <h3 className={styles.searchTitle}>Buscar por ID</h3>
+                    <div className={styles.searchContainer}>
+                        <input 
+                            type="number" 
+                            value={idBusca}
+                            onChange={(e) => setIdBusca(e.target.value)}
+                            placeholder="Digite o ID (ex: 1, 5, 25...)"
+                            className={styles.searchInput}
+                            onKeyPress={(e) => {
+                                if (e.key === 'Enter') {
+                                    buscarPorId();
+                                }
+                            }}
+                        />
+                        <button 
+                            onClick={buscarPorId} 
+                            className={styles.searchButton}
+                            disabled={!idBusca.trim()}
+                        >
+                            Buscar por ID
+                        </button>
+                    </div>
+                </div>
+
                 <div className={styles.controls}>
                     <button onClick={limparSessionStorage} className={styles.clearButton}>
                         Limpar SessionStorage
                     </button>
                     <button onClick={buscarPersonagens} className={styles.reloadButton}>
-                        Recarregar
+                        Recarregar Lista
                     </button>
                 </div>
 

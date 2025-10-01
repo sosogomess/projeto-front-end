@@ -14,11 +14,18 @@ export default function DetalhesPersonagemPage() {
     const [personagem, setPersonagem] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (params.id) {
-            fetchPersonagem(params.id);
-        }
+        // Aguardar o componente estar totalmente montado
+        const timer = setTimeout(() => {
+            setMounted(true);
+            if (params.id) {
+                fetchPersonagem(params.id);
+            }
+        }, 100);
+
+        return () => clearTimeout(timer);
     }, [params.id]);
 
     const fetchPersonagem = async (id) => {
@@ -26,19 +33,71 @@ export default function DetalhesPersonagemPage() {
             setLoading(true);
             setError(null);
             
+            // Aguardar um pouco para evitar problemas de hidratação
+            await new Promise(resolve => setTimeout(resolve, 150));
+            
+            // Primeiro tenta buscar no sessionStorage
+            if (typeof window !== 'undefined' && window.sessionStorage) {
+                try {
+                    const sessionStorageData = sessionStorage.getItem("personagens_salvo_na_sessionStorage");
+                    if (sessionStorageData) {
+                        const personagens = JSON.parse(sessionStorageData);
+                        const personagemEncontrado = personagens.find((p) => p.id === parseInt(id));
+                        
+                        if (personagemEncontrado) {
+                            setPersonagem(personagemEncontrado);
+                            // Usar timeout para toast também
+                            setTimeout(() => {
+                                toast.success("Personagem carregado do cache!");
+                            }, 200);
+                            setLoading(false);
+                            return;
+                        }
+                    }
+                } catch (parseError) {
+                    console.error("Erro ao parsear sessionStorage:", parseError);
+                }
+            }
+            
+            // Se não encontrou no sessionStorage, busca da API
             const response = await axios.get("https://api.sampleapis.com/cartoons/cartoons2D");
             const personagemEncontrado = response.data.find(p => p.id === parseInt(id));
             
             if (personagemEncontrado) {
                 setPersonagem(personagemEncontrado);
-                toast.success("Personagem carregado com sucesso!");
+                // Usar timeout para toast também
+                setTimeout(() => {
+                    toast.success("Personagem carregado com sucesso!");
+                }, 200);
+
+                // Salva no sessionStorage para futuras consultas
+                if (typeof window !== 'undefined' && window.sessionStorage) {
+                    try {
+                        const sessionStorageData = sessionStorage.getItem("personagens_salvo_na_sessionStorage");
+                        const personagensAtuais = sessionStorageData ? JSON.parse(sessionStorageData) : [];
+                        
+                        // Evita duplicatas
+                        const jaExiste = personagensAtuais.find(p => p.id === personagemEncontrado.id);
+                        if (!jaExiste) {
+                            const personagensAtualizados = [...personagensAtuais, personagemEncontrado];
+                            sessionStorage.setItem("personagens_salvo_na_sessionStorage", JSON.stringify(personagensAtualizados));
+                        }
+                    } catch (storageError) {
+                        console.error("Erro ao salvar no sessionStorage:", storageError);
+                    }
+                }
             } else {
                 setError("Personagem não encontrado");
+                setTimeout(() => {
+                    toast.error("Personagem não encontrado!");
+                }, 200);
             }
         } catch (err) {
             setError("Erro ao carregar detalhes do personagem");
             console.error("Erro:", err);
-            toast.error("Erro ao carregar personagem");
+            setTimeout(() => {
+                toast.error("Erro ao carregar personagem!");
+            }, 200);
         } finally {
             setLoading(false);
         }
@@ -49,6 +108,22 @@ export default function DetalhesPersonagemPage() {
             fetchPersonagem(params.id);
         }
     };
+
+    // Evitar renderização antes da montagem para prevenir erros de hidratação
+    if (!mounted) {
+        return (
+            <>
+                <Header />
+                <div className={styles.container}>
+                    <div className={styles.loading}>
+                        <div className={styles.spinner}></div>
+                        <h2>Iniciando...</h2>
+                    </div>
+                </div>
+                <Footer />
+            </>
+        );
+    }
 
     if (loading) {
         return (

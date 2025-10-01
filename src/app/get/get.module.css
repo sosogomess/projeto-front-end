@@ -278,3 +278,100 @@
     align-items: flex-start;
   }
 }
+
+/* Seção de busca por ID */
+.searchSection {
+  background: #fff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.searchTitle {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #333;
+  width: 200px;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-weight: 400;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #C393B5;
+  box-shadow: 0 0 0 2px rgba(195, 147, 181, 0.1);
+}
+
+.searchInput::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
+.searchButton {
+  background: #C393B5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+.searchButton:hover:not(:disabled) {
+  background: #ac739c;
+  transform: none;
+}
+
+.searchButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.searchButton:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  .searchContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .searchButton {
+    width: 100%;
+    max-width: 200px;
+  }
+}
